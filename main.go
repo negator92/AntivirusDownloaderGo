@@ -42,18 +42,10 @@ func main() {
 		}
 
 		//paste date into fileName
-		fmt.Println(fileName)
 		fileNameParts := strings.Split(fileName, ".")
-		fmt.Println(fileNameParts)
 		fileNameParts = append(fileNameParts, "-"+currentTime.Format("2006-01-02")+".")
-		fmt.Println(fileNameParts)
-		// fmt.Scanln()
 		fileNameParts[len(fileNameParts)-2], fileNameParts[len(fileNameParts)-1] = fileNameParts[len(fileNameParts)-1], fileNameParts[len(fileNameParts)-2]
-		fmt.Println(fileNameParts)
-		// fmt.Scanln()
 		fileName = fileNameParts[0] + fileNameParts[len(fileNameParts)-2] + fileNameParts[len(fileNameParts)-1]
-		fmt.Println(fileName)
-		// fmt.Scanln()
 		// Create blank file
 		file, err := os.Create(fileName)
 		if err != nil {
